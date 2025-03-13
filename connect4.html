@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect Four with MCTS AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    #board {
+      display: grid;
+      grid-template-columns: repeat(7, 60px);
+      grid-gap: 5px;
+      width: 450px;
+      margin: 20px auto;
+    }
+    .cell {
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      cursor: pointer;
+    }
+    #status, #game-result {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    #start, #restart {
+      margin: 15px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="start">
+    <h1>Connect Four</h1>
+    <button id="human-first">Play as Human</button>
+    <button id="ai-first">Let AI Start</button>
+    <button id="simulate">Simulate AI VS AI</button>
+  </div>
+
+
+  <div id="board" class="hidden">
+   
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+    <div class="cell" data-index="9"></div>
+    <div class="cell" data-index="10"></div>
+    <div class="cell" data-index="11"></div>
+    <div class="cell" data-index="12"></div>
+    <div class="cell" data-index="13"></div>
+    <div class="cell" data-index="14"></div>
+    <div class="cell" data-index="15"></div>
+    <div class="cell" data-index="16"></div>
+    <div class="cell" data-index="17"></div>
+    <div class="cell" data-index="18"></div>
+    <div class="cell" data-index="19"></div>
+    <div class="cell" data-index="20"></div>
+    
+    <div class="cell" data-index="21"></div>
+    <div class="cell" data-index="22"></div>
+    <div class="cell" data-index="23"></div>
+    <div class="cell" data-index="24"></div>
+    <div class="cell" data-index="25"></div>
+    <div class="cell" data-index="26"></div>
+    <div class="cell" data-index="27"></div>
+    
+    <div class="cell" data-index="28"></div>
+    <div class="cell" data-index="29"></div>
+    <div class="cell" data-index="30"></div>
+    <div class="cell" data-index="31"></div>
+    <div class="cell" data-index="32"></div>
+    <div class="cell" data-index="33"></div>
+    <div class="cell" data-index="34"></div>
+    
+    <div class="cell" data-index="35"></div>
+    <div class="cell" data-index="36"></div>
+    <div class="cell" data-index="37"></div>
+    <div class="cell" data-index="38"></div>
+    <div class="cell" data-index="39"></div>
+    <div class="cell" data-index="40"></div>
+    <div class="cell" data-index="41"></div>
+  </div>
+
+ 
+  <div id="status" class="hidden"></div>
+  <div id="game-result" class="hidden"></div>
+
+  <div id="restart" class="hidden">
+    <button>Restart</button>
+  </div>
+
+
+  <script src="connect4.js"></script>
+</body>
+</html>
